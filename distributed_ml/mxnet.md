@@ -4,7 +4,7 @@ Notes about MXNet while reading:
 
 [MXNet: Programming Models for Deep Learning](http://mxnet.readthedocs.org/en/latest/program_model.html)
 
-* Materials offers survey about programming model of different NN libraries: `symbolic` vs `imperative`
+* Programming model of different NN libraries: `symbolic` vs `imperative`
   * symbolic:
   ```
 A = Variable('A')
