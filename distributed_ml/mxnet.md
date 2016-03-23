@@ -27,4 +27,4 @@ d = c + 1
     * because programming languages itself tends to support more syntax than symbolic language
   * Symbolic Programs are More Efficient
     * memory: symbolic program is compiled into memory graph, by knowing when a varible is finished using, can release resource immediately. Comparing to imperative releases after out-of-scope. Will it be a big deal? If it's a big deal I think we can invent something doing more strict out-of-scope anlysis. (e.g., insert more fine grained scope into code).
-    
+    * runtime: symobic program can do operation folding: do `a * b + 1` in one single GPU kernel instead two separate ones. I wonder if GPU compilers like nvcc does it automatically?
