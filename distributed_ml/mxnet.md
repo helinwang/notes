@@ -30,6 +30,6 @@ d = c + 1
     * memory: symbolic program is good at defining/inferring computation boundaries (e.g., when only need forward pass, don't need backward pass, do not need to store gradient used for backward propagation). __In the example case, imperative program can do it as well. I feel that by using symbolic program and building graphs can optimize memory storage by ignore storing the varibles not needed for the computation in latter stage. But I have not yet see a case that imperative program can not do and have a significant memory improvement that will justify the claim.__
     * runtime: symobic program can do operation folding: do `a * b + 1` in one single GPU kernel instead two separate ones. __I wonder if GPU compilers like nvcc does it automatically?__
   * Saving model and weights are trivial for symbolic program since it compile everything into memory graph
-  * Parameter update is easier for imperative programs
+  * Parameter update is easier for imperative programs, symbolic programs normally does it in imperative way too
 
     > Most symbolic programs are data flow(computation) graphs. Dataflow graph can be used to descrie computation conveniently. However, it is not obvious how to use data flow graph to describe parameter updates, because parameter updates introduces mutation, which is not concept of data flow. What most symbolic programs do is to introduce a special update statement, to update some persistent states of the programs.
