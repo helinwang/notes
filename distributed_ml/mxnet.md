@@ -4,6 +4,8 @@ Notes about MXNet while reading:
 
 [MXNet: Programming Models for Deep Learning](http://mxnet.readthedocs.org/en/latest/program_model.html)
 
+[Expression Template Tutorial](https://github.com/dmlc/mshadow/blob/master/guide/exp-template/README.md)
+
 * Programming model of different NN libraries: `symbolic` vs `imperative`
   * symbolic:
   ```
@@ -37,3 +39,6 @@ d = c + 1
   * Big layer `SigmoidLayer(x)`
   * Small layer `EWiseDivisionLayer(1.0, AddScalarLayer(ExpLayer(-x), 1.0))`
   * Big layer could be more easily optimized, small layer is more flexiable. Small layer could be optimized with additional compilation step(E.g., look for sigmoid layer pattern and replace with sigmoid layer kernel). __I think more constraint by using big layer can save engineering effort, preventing delivering use case that not necessary for goal.__
+  * Alternative to big / small layer: [Expression Template](https://github.com/dmlc/mshadow/blob/master/guide/exp-template/README.md)
+  
+    > Basically, the idea is to use template programming to generate generic kernels from expression tree at compile time.
