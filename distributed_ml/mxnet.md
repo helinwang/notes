@@ -37,7 +37,7 @@ d = c + 1
     > Most symbolic programs are data flow(computation) graphs. Dataflow graph can be used to descrie computation conveniently. However, it is not obvious how to use data flow graph to describe parameter updates, because parameter updates introduces mutation, which is not concept of data flow. What most symbolic programs do is to introduce a special update statement, to update some persistent states of the programs.
 * Building block: big layer or small layer?
   * Big layer `SigmoidLayer(x)`
-  * Small layer `EWiseDivisionLayer(1.0, AddScalarLayer(ExpLayer(-x), 1.0))`
+  * Small layer `EWiseDivisionLayer(1.0, AddScalarLayer(ExpLayer(-x), 1.0))` (does same thing as the big layer above)
   * Big layer could be more easily optimized, small layer is more flexiable. Small layer could be optimized with additional compilation step(E.g., look for sigmoid layer pattern and replace with sigmoid layer kernel). __I think more constraint by using big layer can save engineering effort, preventing delivering use case that not necessary for goal.__
   * Alternative to big / small layer: [Expression Template](https://github.com/dmlc/mshadow/blob/master/guide/exp-template/README.md)
   
