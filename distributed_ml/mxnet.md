@@ -42,3 +42,4 @@ d = c + 1
   * Alternative to big / small layer: [Expression Template](https://github.com/dmlc/mshadow/blob/master/guide/exp-template/README.md)
   
     > Basically, the idea is to use template programming to generate generic kernels from expression tree at compile time.
+* dependency engine is used to track variable read / write dependency, and automatically parallels non-dependent operations. __I wonder if `go generate` can change source code and automatically analyse and inject parallel code.__
